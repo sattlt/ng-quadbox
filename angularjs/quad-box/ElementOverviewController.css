@@ -1,0 +1,217 @@
+@font-face {
+  font-family: SiemensSans;
+  src: url('../../../../resource/fonts/SiemensSans-Roman.otf?1425392318');
+}
+@font-face {
+  font-family: SiemensSans;
+  src: url('../../../../resource/fonts/SiemensSans-Bold.otf?1425392318');
+  font-weight: bold;
+}
+@font-face {
+  font-family: SiemensSans;
+  src: url('../../../../resource/fonts/SiemensSans-BoldItalic.otf?1425392318');
+  font-weight: bold;
+  font-style: italic;
+}
+/* schrift */
+/* active tab */
+/* line 462, ../../../../sass/_base.scss */
+.smallloader {
+  width: 16px;
+  height: 16px;
+  background: url('../../../../resource/icons/02_09_Loader/smallloader.png?1425392318') no-repeat 0 0;
+  overflow: hidden;
+  -moz-animation: smallload 1.5s steps(20, end) infinite;
+  -webkit-animation: smallload 1.5s steps(20, end) infinite;
+  animation: smallload 1.5s steps(20, end) infinite;
+}
+
+/* line 470, ../../../../sass/_base.scss */
+.smallloader-yellow {
+  width: 16px;
+  height: 19px;
+  background: url('../../../../resource/icons/02_09_Loader/bigloader.png?1425392318') no-repeat 0 0;
+  background-size: 16px 398px;
+  -moz-animation: smallload 1.5s steps(20, end) infinite;
+  -webkit-animation: smallload 1.5s steps(20, end) infinite;
+  animation: smallload 1.5s steps(20, end) infinite;
+}
+
+@-moz-keyframes smallload {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -400px;
+  }
+}
+@-webkit-keyframes smallload {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -400px;
+  }
+}
+@keyframes smallload {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -400px;
+  }
+}
+/* line 486, ../../../../sass/_base.scss */
+.bigloader {
+  width: 44px;
+  height: 50px;
+  background: url('../../../../resource/icons/02_09_Loader/bigloader.png?1425392318') no-repeat 0 0;
+  overflow: hidden;
+  -moz-animation: bigload 1.5s steps(20, end) infinite;
+  -webkit-animation: bigload 1.5s steps(20, end) infinite;
+  animation: bigload 1.5s steps(20, end) infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -22px;
+  margin-top: -25px;
+  text-align: center;
+  z-index: 999;
+}
+
+@-moz-keyframes bigload {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -1000px;
+  }
+}
+@-webkit-keyframes bigload {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -1000px;
+  }
+}
+@keyframes bigload {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -1000px;
+  }
+}
+/* line 509, ../../../../sass/_base.scss */
+.biggestloader {
+  width: 80px;
+  height: 80px;
+  background: url('../../../../resource/icons/02_09_Loader/biggestloader.png?1433148387') no-repeat 0 0;
+  overflow: hidden;
+  -moz-animation: biggestLoader 1.5s steps(20, end) infinite;
+  -webkit-animation: biggestLoader 1.5s steps(20, end) infinite;
+  animation: biggestLoader 1.5s steps(20, end) infinite;
+}
+
+@-moz-keyframes biggestLoader {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -1600px;
+  }
+}
+@-webkit-keyframes biggestLoader {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -1600px;
+  }
+}
+@keyframes biggestLoader {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -1600px;
+  }
+}
+/* line 5, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] footer {
+  height: 34px;
+}
+/* line 8, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] .calendar, [ng-controller="ElementOverviewController"] .event-filter {
+  margin-left: 3em;
+  padding-top: .5em;
+  line-height: 10px;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 10px;
+}
+/* line 15, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] .calendar button, [ng-controller="ElementOverviewController"] .event-filter button {
+  display: block;
+  margin: 0 0 0 auto;
+  position: relative;
+  overflow: visible;
+}
+/* line 20, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] .calendar button::after, [ng-controller="ElementOverviewController"] .event-filter button::after {
+  content: '';
+  display: block;
+  height: 15px;
+  position: absolute;
+  right: -1.5em;
+  top: .1em;
+  width: 15px;
+}
+/* line 30, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] .calendar span, [ng-controller="ElementOverviewController"] .event-filter span {
+  color: #990300;
+}
+/* line 36, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] .calendar button::after {
+  background: url('../../../../resource/icons/20_Toolbar_cal.png?1425392318') center -4px no-repeat;
+}
+/* line 39, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] .calendar button:hover::after {
+  background-image: url('../../../../resource/icons/20_Toolbar_cal_hover.png?1425392318');
+}
+/* line 46, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] .event-filter button::after {
+  background: url('../../../../resource/icons/17_Window_Head_03_filter.png?1425392318') center -4px no-repeat;
+}
+/* line 49, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] .event-filter button:hover::after {
+  background-image: url('../../../../resource/icons/17_Window_Head_03_filter_over.png?1425392318');
+  background-position-y: -6px;
+}
+/* line 54, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] .event-filter span {
+  text-decoration: line-through;
+}
+/* line 58, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] #severityFilters {
+  padding-top: .3em;
+  font-size: 12px;
+}
+/* line 61, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] #severityFilters button {
+  width: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+/* line 65, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] #severityFilters button:first-child {
+  width: 65px;
+  padding-left: 12px;
+}
+/* line 70, ElementOverviewController.scss */
+[ng-controller="ElementOverviewController"] #severityFilters .severityColorBox {
+  margin-right: .5em;
+}
+
+/*# sourceMappingURL=ElementOverviewController.css.map */

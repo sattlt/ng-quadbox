@@ -1,0 +1,74 @@
+@import "base";
+
+[ng-controller="ElementOverviewController"] {
+    $footer-height: 34px;
+    footer {
+        height: $footer-height;
+    }
+    .calendar, .event-filter {
+        margin-left: 3em;
+        padding-top: .5em;
+        line-height: $small-font-size;
+        text-align: right;
+        white-space: nowrap;
+        font-size: $small-font-size;
+        button {
+            display: block;
+            margin: 0 0 0 auto;
+            position: relative;
+            overflow: visible;
+            &::after {
+                content: '';
+                display: block;
+                height: 15px;
+                position: absolute;
+                right: -1.5em;
+                top: .1em;
+                width: 15px;
+            }
+        }
+        span {
+            color: #990300;
+        }
+    }
+    .calendar {
+        button {
+            &::after {
+                background: image-url("icons/20_Toolbar_cal.png") center -4px no-repeat;
+            }
+            &:hover::after {
+                background-image: image-url("icons/20_Toolbar_cal_hover.png");
+            }
+        }
+    }
+    .event-filter {
+        button {
+            &::after {
+                background: image-url("icons/17_Window_Head_03_filter.png") center -4px no-repeat;
+            }
+            &:hover::after {
+                background-image: image-url("icons/17_Window_Head_03_filter_over.png");
+                background-position-y: -6px;
+            }
+        }
+        span {
+            text-decoration: line-through;
+        }
+    }
+    #severityFilters {
+        padding-top: .3em;
+        font-size: $default-font-size;
+        button {
+            width: auto;
+            padding-left: 12px;
+            padding-right: 12px;
+            &:first-child {
+                width: 65px;
+                padding-left: 12px;
+            }
+        }
+        .severityColorBox {
+            margin-right: .5em;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<div ng-controller="ElementOverviewController" class="default-layout">
+    <header>
+        <breadcrumb></breadcrumb>
+
+        <right>
+            <group>
+                <label>Workorder</label>
+
+                <context-help key="panelSelectHelp_{{current.currentProject.id}}"></context-help>
+                <button title="Workorders" class="workorder-icon toggle" ng-click="openWorkOrdersPopup()" permission="WORKORDERS.SHOW_WORKORDERS" />
+            </group>
+            <group>
+                <label class="resetButtonLink" ng-click="resetQuadBox()">Window</label>
+
+                <button title="Elements" class="elements-icon toggle" quad-box-toggle="fleetElements"></button>
+                <button title="Map" class="map-icon toggle" quad-box-toggle="fleetMap"></button>
+                <button title="Graphic" class="graphics-icon toggle" quad-box-toggle="fleetGraphics"></button>
+                <button title="Events" class="events-icon toggle" quad-box-toggle="fleetEvents"></button>
+                <button title="Auto Reporting" class="auto-reporting-icon toggle" quad-box-toggle="fleetAutoReporting"></button>
+            </group>
+        </right>
+    </header>
+
+    <quad-box context="quadBoxContext"></quad-box>
+
+    <footer>
+        <group id="severityFilters">
+            <button ng-class="{active: filters.isAllSeverities()}" ng-click="filters.setMaxSeverity()" class="toggle" localize>All</button>
+            <button ng-class="{active: severity.active}" ng-click="filters.setMaxSeverity(severity)" class="toggle" title="{{severity.name}}" ng-repeat="severity in filters.severities | orderBy:'order':true">
+                <span class="severityColorBox" ng-style="{'background-color': severity.colorCode}"></span>{{severity.total}}</button>
+        </group>
+
+        <drop-down align="left" drop-down-confirm="confirmSelectedStates()" drop-down-cancel="cancelSelectedStates()" class="event-filter">
+            <context-help key="eventFilterHelp_{{current.currentProject.id}}"></context-help>
+            <button class="dropdown-toggle" localize>Filtered States</button>
+            <cont ng-repeat="selection in deselectedEventStates"><span>{{selection.state.name}}</span>{{$last?'':', '}}</cont>
+
+            <div class="dropdown-menu select">
+                <header localize>Display</header>
+                <ul>
+                    <li ng-repeat="selection in selectedEventStates">
+                        <input id="chk_eventstate_{{selection.state.key}}" type="checkbox" ng-checked="selection.selected" ng-model="selection.selected">
+                        <label for="chk_eventstate_{{selection.state.key}}">{{selection.state.name}}</label>
+                    </li>
+                </ul>
+                <footer>
+                    <button class="dropdown-confirm" localize>OK</button>
+                    <button class="dropdown-cancel" localize>Cancel</button>
+                </footer>
+            </div>
+        </drop-down>
+
+        <drop-down align="left" drop-down-confirm="confirmSelectedDate()" drop-down-cancel="cancelSelectedDate()" class="calendar">
+            <button class="dropdown-toggle" localize>Events since</button>
+            <span>{{selectedDate.dateString}}</span>
+
+            <div class="dropdown-menu">
+                <header localize>Choose date</header>
+                <pick-date model="selectedDate"></pick-date>
+                <footer>
+                    <button class="dropdown-confirm" localize>OK</button>
+                    <button class="dropdown-cancel" localize>Cancel</button>
+                </footer>
+            </div>
+        </drop-down>
+
+    </footer>
+</div>
